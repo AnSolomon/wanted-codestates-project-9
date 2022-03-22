@@ -6,7 +6,8 @@ export const HeaderWrap = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 10%;
+  height: 100px;
+  z-index: 1;
 `;
 
 export const InnerLink = styled.div`
@@ -24,6 +25,7 @@ export const InnerNav = styled.div`
   display: flex;
   width: 75%;
   height: 55px;
+  z-index: 1;
 `;
 
 export const NavUl = styled.ul`
@@ -44,7 +46,6 @@ export const NavLi = styled.li`
   width: 120px;
   height: 100%;
   float: left;
-  text-align: center;
   font-size: 14px;
 `;
 
@@ -53,8 +54,8 @@ export const NavContent = styled.div`
   align-items: center;
   width: 80px;
   height: 55px;
-  color: white;
-  opacity: 0.5;
+  opacity: ${({ state }) => (state ? "1" : "0.5")};
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
@@ -62,7 +63,7 @@ export const NavContent = styled.div`
 
   &::after {
     position: absolute;
-    width: 0px;
+    width: ${({ state }) => (state ? "80px" : "0px")};
     height: 51px;
     content: "";
     border-bottom: 4px solid white;
@@ -74,15 +75,9 @@ export const NavContent = styled.div`
   }
 
   &:hover::after {
+    opacity: 1;
     width: 80px;
     border-bottom: 4px solid white;
     transition: all 0.1s ease-in-out;
   }
 `;
-
-export const ContentA = styled.a`
-  margin: 0 auto;
-  cursor: pointer;
-  z-index: 1;
-`;
-
