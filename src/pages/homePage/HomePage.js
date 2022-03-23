@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components";
-import { searchResultRequest } from "../../redux/userInfoSlice";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/header/Header";
 import {
   Wrap,
@@ -30,10 +28,11 @@ const HomePage = () => {
   const [isSelectTypeModal, setIsSelectTypeModalModal] = useState(false);
   const [searchUserHistory, setSearchUserHistory] = useState([]);
 
-  const dispatch = useDispatch();
-  const getUserInfo = useSelector((state) => state.userInfoSlice.data);
+
 
   const searchUserNickname = useRef(null);
+
+  const moveSearchUser = useNavigate();
 
   const selectTypeList = [
     { name: "유저", placeholder: "카트라이더 닉네임을 입력" },
@@ -56,7 +55,7 @@ const HomePage = () => {
 
   const searchUserBtnClick = () => {
     if (searchUserNickname.current.value) {
-      dispatch(searchResultRequest(searchUserNickname.current.value));
+      moveSearchUser(`/user?nick=${searchUserNickname.current.value}&matchType=indi`);
     }
   };
 
@@ -66,8 +65,7 @@ const HomePage = () => {
       const reverseGetHistory = JSON.parse(getSearchUserHistory).reverse();
       setSearchUserHistory(reverseGetHistory);
     }
-
-  }, [getUserInfo]);
+  }, []);
 
   return (
     <Wrap>

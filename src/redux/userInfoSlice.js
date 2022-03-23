@@ -17,8 +17,10 @@ export const searchResultRequest = createAsyncThunk(
 
     if (checkCache.length !== 0) {
       const response = await api.get(
-        `/kart/v1.0/users/${checkCache[0].accessId}/matches?start_date=&end_date= &offset=0&limit=10&match_types=`
+        `/kart/v1.0/users/${checkCache[0].accessId}/matches?start_date=&end_date= &offset=0&limit=200&match_types=`
       );
+
+      response.data["level"] = checkCache[0].level;
 
       return response.data;
     } else {
@@ -37,6 +39,8 @@ export const searchResultRequest = createAsyncThunk(
         `/kart/v1.0/users/${getUserResponse.data.accessId}/matches?start_date=&end_date= &offset=0&limit=10&match_types=`
       );
 
+      response.data["level"] = getUserResponse.data.level;
+
       return response.data;
     }
   }
@@ -45,13 +49,18 @@ export const searchResultRequest = createAsyncThunk(
 export const userInfoSlice = createSlice({
   name: "requestUserInfo",
   initialState: { data: [] },
-  reducers: {},
+  reducers: {
+    initialData: (state) => {
+      state.data = [];
+    }
+  },
   extraReducers: {
     [searchResultRequest.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.data = payload;
     },
   },
 });
 
+
+export const { initialData } = userInfoSlice.actions;
 export default userInfoSlice.reducer;

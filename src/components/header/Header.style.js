@@ -13,7 +13,7 @@ export const HeaderWrap = styled.div`
 export const InnerLink = styled.div`
   display: flex;
   align-items: center;
-  width: 75%;
+  width: 70%;
   height: 48px;
 `;
 
@@ -23,7 +23,7 @@ export const ImageItem = styled.div`
 
 export const InnerNav = styled.div`
   display: flex;
-  width: 75%;
+  width: 70%;
   height: 55px;
   z-index: 1;
 `;
