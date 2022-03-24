@@ -28,8 +28,6 @@ const HomePage = () => {
   const [isSelectTypeModal, setIsSelectTypeModalModal] = useState(false);
   const [searchUserHistory, setSearchUserHistory] = useState([]);
 
-
-
   const searchUserNickname = useRef(null);
 
   const moveSearchUser = useNavigate();
@@ -50,13 +48,27 @@ const HomePage = () => {
   };
 
   const handleAutoSearchModal = () => {
-    setIsAutoSearchModal((isAutoSearchModal) => !isAutoSearchModal);
+    if (selectType === 0) {
+      setIsAutoSearchModal((isAutoSearchModal) => !isAutoSearchModal);
+    }
   };
 
-  const searchUserBtnClick = () => {
-    if (searchUserNickname.current.value) {
-      moveSearchUser(`/user?nick=${searchUserNickname.current.value}&matchType=indi`);
+  const searchUserBtnClick = (e) => {
+    if (e.type === "click" || (e.type === "keyup" && e.key === "Enter")) {
+      if (searchUserNickname.current.value) {
+        if (selectType === 0) {
+          moveSearchUser(
+            `/user?nick=${searchUserNickname.current.value}&matchType=indi`
+          );
+        } else {
+          alert("유저만 검색 가능합니다.");
+        }
+      }
     }
+  };
+
+  const userHistoryModalClick = (nickName) => {
+    moveSearchUser(`/user?nick=${nickName}&matchType=indi`);
   };
 
   useEffect(() => {
@@ -100,6 +112,7 @@ const HomePage = () => {
                 placeholder={selectTypeList[selectType].placeholder}
                 onFocus={handleAutoSearchModal}
                 onBlur={handleAutoSearchModal}
+                onKeyUp={searchUserBtnClick}
               />
             </SearchInputDiv>
             <SearchButton onClick={searchUserBtnClick}>
@@ -111,7 +124,12 @@ const HomePage = () => {
             {isAutoSearchModal ? (
               <AutoSearchModal>
                 {searchUserHistory.map((elem) => (
-                  <AutoSearchContent key={elem.nickName}>
+                  <AutoSearchContent
+                    key={elem.nickName}
+                    onMouseDown={() => {
+                      userHistoryModalClick(elem.nickName);
+                    }}
+                  >
                     👀 {elem.nickName}
                   </AutoSearchContent>
                 ))}

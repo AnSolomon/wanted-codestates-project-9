@@ -33,10 +33,14 @@ export const searchResultRequest = createAsyncThunk(
         level: getUserResponse.data.level,
       };
       getLocalStorage.push(object);
+      if(getLocalStorage.length > 5){
+        getLocalStorage = getLocalStorage.slice(-5);
+      }
+
       localStorage.setItem("searchUserList", JSON.stringify(getLocalStorage));
 
       const response = await api.get(
-        `/kart/v1.0/users/${getUserResponse.data.accessId}/matches?start_date=&end_date= &offset=0&limit=10&match_types=`
+        `/kart/v1.0/users/${getUserResponse.data.accessId}/matches?start_date=&end_date= &offset=0&limit=200&match_types=`
       );
 
       response.data["level"] = getUserResponse.data.level;

@@ -186,6 +186,7 @@ export const AutoSearchModal = styled.div`
 `;
 
 export const AutoSearchContent = styled.p`
+  cursor: pointer;
   color: white;
   font-weight: bold;
   font-size: 14px;

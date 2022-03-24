@@ -5,7 +5,8 @@ export const HeaderWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 1900px;
+  min-width: 1000px;
   height: 100px;
   z-index: 1;
 `;

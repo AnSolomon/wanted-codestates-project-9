@@ -1,11 +1,10 @@
 import styled, { keyframes } from "styled-components";
 
 export const Wrap = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
   min-width: 1000px;
-  min-height: 800px;
+  min-height: 1000px;
   overflow-y: hidden;
 `;
 
@@ -50,6 +49,7 @@ export const DataInfoDiv = styled.div`
 `;
 
 export const ReportDiv = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@ export const ProfileDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 175px;
+  height: 220px;
   margin-top: 10px;
   border-width: 1px 1px 1px 4px;
   border-style: solid;
@@ -106,7 +106,7 @@ export const SelectMatch = styled.div`
 `;
 
 export const IndividualMatch = styled.span`
-  position: relative;
+  cursor: pointer;
   width: 100px;
   height: 25px;
   line-height: 25px;
@@ -122,6 +122,7 @@ export const IndividualMatch = styled.span`
 `;
 
 export const TeamMatch = styled.span`
+  cursor: pointer;
   width: 100px;
   height: 25px;
   line-height: 25px;
@@ -136,12 +137,21 @@ export const TeamMatch = styled.span`
   background-color: ${({ state }) => (state === "team" ? "#07f" : "white")};
 `;
 
-export const UserRecommend = styled.div`
-  width: 850px;
+export const UserGraphDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
   height: 100%;
-  background-color: blue;
+  border: 1px solid #f2f2f2;
 `;
 
+export const UserRecommendDiv = styled.div`
+  width: 400px;
+  height: 100%;
+  background-color: purple;
+`;
 
 const colorChangeAnimation = keyframes`
   0% {
@@ -154,7 +164,6 @@ const colorChangeAnimation = keyframes`
     background-position: 0%;
   }
 `;
-
 
 export const ReuqestMatchDiv = styled.div`
   display: flex;
@@ -174,10 +183,10 @@ export const ReuqestMatchDiv = styled.div`
   padding: 0;
   font-family: Noto Sans KR;
   font-weight: bold;
-
 `;
 
 export const RequestDiv = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,50 +205,135 @@ export const DataChartDiv = styled.div`
   width: 100%;
   height: 266px;
   margin-top: 20px;
-
-  background-color: gray;
-
 `;
-
-
-export const SummaryDiv = styled.div`
-  width: 34%;
-  height: 100%;
-  background-color: red;
-
-`;
-
-export const RankGraphDiv = styled.div`
-  width: 34%;
-  height: 100%;
-  background-color: green;
-`;
-
-export const TrackKartDiv = styled.div`
-  width: 34%;
-  height: 100%;
-  background-color: brown;
-`;
-
 
 export const RecordDiv = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100%;
   margin-top: 20px;
+`;
 
-  background-color: violet;
+export const RecordSpeedDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  border: 1px solid #f2f2f2;
 
+  margin-right: 5px;
+`;
+
+export const RecordItemDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  border: 1px solid #f2f2f2;
+  margin-left: 5px;
+`;
+
+export const RecordTitle = styled.p`
+  height: 35px;
+  width: 95%;
+  border-bottom: 1px solid #ccc;
+  font-family: Noto Sans KR;
+  font-weight: bold;
+  letter-spacing: -1px;
+`;
+
+export const RecordSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 5px;
+  border-width: 1px 1px 1px 4px;
+  border-style: solid;
+  border-color: ${({state}) => state === "Retired" ? "whitesmoke whitesmoke whitesmoke red" : state === "1" ? "whitesmoke whitesmoke whitesmoke #07f" : "whitesmoke whitesmoke whitesmoke gray"};
+  background-color: ${({state}) => state === "Retired" ? "rgba(246,36,89,.05)" : state === "1" ? "rgba(0,119,255,.05)" : "white"};
+  box-sizing: border-box;
+`;
+
+export const StartTime = styled.div`
+  margin-left: 10px;
+  font-size: 14px;
+  flex: 1;
+`;
+
+export const Rank = styled.div`
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  flex: 1;
+  color: ${({state}) => state === "Retired" ? "red" : state === "1" ? "#07f" : "gray"}
+
+`;
+
+export const RankSpan = styled.span`
+  font-size: 36px;
+
+`;
+
+export const CountSpan = styled.span`
+  font-size: 24px;
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+`;
+
+
+export const Track = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  font-family: Noto Sans KR;
+  letter-spacing: -1px;
+
+
+`;
+
+export const Kart = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-family: Noto Sans KR;
+  letter-spacing: -1px;
+`;
+
+export const MatchTime = styled.div`
+  margin-right: 10px;
+  flex: 1;
+
+`;
+
+export const NoHistoryDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 5px;
+  border: 2px solid whitesmoke;
+  background-color: #ebebeb;
+
+  font-family: Noto Sans KR;
+  letter-spacing: -1px;
+
+  box-sizing: border-box;
 `;
 
 export const SpinnerDiv = styled.div`
   display: flex;
-  position: absolute;
-  top: 20%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-top: 15%;
   width: 100%;
-  height: 80%;
+  height: 1000px;
 `;
 
 const rotationAnimation = keyframes`
