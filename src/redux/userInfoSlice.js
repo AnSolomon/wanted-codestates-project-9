@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { api } from "../axios";
 
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
 export const searchResultRequest = createAsyncThunk(
+  
   "requestUserInfo",
   async (searchInput) => {
     let getLocalStorage = JSON.parse(localStorage.getItem("searchUserList"));
@@ -17,7 +20,7 @@ export const searchResultRequest = createAsyncThunk(
 
     if (checkCache.length !== 0) {
       const response = await api.get(
-        `/kart/v1.0/users/${checkCache[0].accessId}/matches?start_date=&end_date= &offset=0&limit=200&match_types=`
+        `${PROXY}/kart/v1.0/users/${checkCache[0].accessId}/matches?start_date=&end_date= &offset=0&limit=200&match_types=`
       );
 
       response.data["level"] = checkCache[0].level;
@@ -25,7 +28,7 @@ export const searchResultRequest = createAsyncThunk(
       return response.data;
     } else {
       const getUserResponse = await api.get(
-        `/kart/v1.0/users/nickname/${searchInput}`
+        `${PROXY}/kart/v1.0/users/nickname/${searchInput}`
       );
       const object = {
         accessId: getUserResponse.data.accessId,
@@ -40,7 +43,7 @@ export const searchResultRequest = createAsyncThunk(
       localStorage.setItem("searchUserList", JSON.stringify(getLocalStorage));
 
       const response = await api.get(
-        `/kart/v1.0/users/${getUserResponse.data.accessId}/matches?start_date=&end_date= &offset=0&limit=200&match_types=`
+        `${PROXY}/kart/v1.0/users/${getUserResponse.data.accessId}/matches?start_date=&end_date= &offset=0&limit=200&match_types=`
       );
 
       response.data["level"] = getUserResponse.data.level;
