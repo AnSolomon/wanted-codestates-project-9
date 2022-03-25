@@ -121,7 +121,7 @@ const HomePage = () => {
             <SearchButton onClick={searchUserBtnClick}>
               <img
                 style={{ cursor: "pointer" }}
-                src="/img/tmi_logo_default.svg"
+                src="https://ansolomon.github.io/wanted-codestates-project-9/img/tmi_logo_default.svg"
               />
             </SearchButton>
             {isAutoSearchModal ? (

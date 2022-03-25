@@ -70,7 +70,6 @@ const LineGraph = ({ speedRankList, itemRankList }) => {
       }
     }
   }, [ctx, speedRankList, itemRankList]);
-  console.log(averRank);
 
   return (
     <>

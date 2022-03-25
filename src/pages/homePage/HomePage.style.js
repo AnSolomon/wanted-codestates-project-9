@@ -18,7 +18,7 @@ export const ContentMain = styled.div`
   width: 100%;
   height: 680px;
   margin-top: -55px;
-  background-image: url("/img/main_bg1.png");
+  background-image: url("https://ansolomon.github.io/wanted-codestates-project-9/img/main_bg1.png");
   z-index: 0;
 `;
 
@@ -48,7 +48,7 @@ const motionRightAnimation = keyframes`
 `;
 
 export const LeftImg = styled.img.attrs({
-  src: "/img/covid_left.png",
+  src: "https://ansolomon.github.io/wanted-codestates-project-9/img/covid_left.png",
 })`
   position: absolute;
   width: 380px;
@@ -60,7 +60,7 @@ export const LeftImg = styled.img.attrs({
 `;
 
 export const LeftMainImg = styled.img.attrs({
-  src: "/img/main_left_bg.png",
+  src: "https://ansolomon.github.io/wanted-codestates-project-9/img/main_left_bg.png",
 })`
   position: absolute;
   width: 380px;
@@ -72,7 +72,7 @@ export const LeftMainImg = styled.img.attrs({
 `;
 
 export const RightImg = styled.img.attrs({
-  src: "/img/covid_right.png",
+  src: "https://ansolomon.github.io/wanted-codestates-project-9/img/covid_right.png",
 })`
   position: absolute;
   width: 380px;
@@ -84,7 +84,7 @@ export const RightImg = styled.img.attrs({
 `;
 
 export const RightMainImg = styled.img.attrs({
-  src: "/img/main_right_bg.png",
+  src: "https://ansolomon.github.io/wanted-codestates-project-9/img/main_right_bg.png",
 })`
   position: absolute;
   width: 380px;

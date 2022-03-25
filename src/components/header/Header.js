@@ -22,10 +22,10 @@ const Header = ({ receiveLink }) => {
     <HeaderWrap>
       <InnerLink>
         <ImageItem>
-          <img src="/img/logo_kart.png" />
+          <img src="https://ansolomon.github.io/wanted-codestates-project-9/img/logo_kart.png" />
         </ImageItem>
         <ImageItem>
-          <img src="/img/tmi_logo_default_b.svg" />
+          <img src="https://ansolomon.github.io/wanted-codestates-project-9/img/tmi_logo_default_b.svg" />
         </ImageItem>
       </InnerLink>
       <InnerNav>

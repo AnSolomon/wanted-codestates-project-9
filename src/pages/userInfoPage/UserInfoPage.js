@@ -326,7 +326,7 @@ const UserInfoPage = () => {
                             style={{ width: "80px", height: "80px" }}
                             src={`https://static.api.nexon.co.kr/kart/latest/track/${elem.trackId}.png`}
                             onError={(e) => {
-                              e.target.src = "/img/load_error.png";
+                              e.target.src = "https://ansolomon.github.io/wanted-codestates-project-9/img/load_error.png";
                             }}
                           />
                           <p>{elem.trackName}</p>
@@ -336,7 +336,7 @@ const UserInfoPage = () => {
                             style={{ width: "80px", height: "80px" }}
                             src={`https://static.api.nexon.co.kr/kart/latest/kart/${elem.kartId}.png`}
                             onError={(e) => {
-                              e.target.src = "/img/load_error.png";
+                              e.target.src = "https://ansolomon.github.io/wanted-codestates-project-9/img/load_error.png";
                             }}
                           />
                           <p>{elem.kartName}</p>
@@ -367,7 +367,7 @@ const UserInfoPage = () => {
                             style={{ width: "80px", height: "80px" }}
                             src={`https://static.api.nexon.co.kr/kart/latest/track/${elem.trackId}.png`}
                             onError={(e) => {
-                              e.target.src = "/img/load_error.png";
+                              e.target.src = "https://ansolomon.github.io/wanted-codestates-project-9/img/load_error.png";
                             }}
                           />
                           <p>{elem.trackName}</p>
@@ -377,7 +377,7 @@ const UserInfoPage = () => {
                             style={{ width: "80px", height: "80px" }}
                             src={`https://static.api.nexon.co.kr/kart/latest/kart/${elem.kartId}.png`}
                             onError={(e) => {
-                              e.target.src = "/img/load_error.png";
+                              e.target.src = "https://ansolomon.github.io/wanted-codestates-project-9/img/load_error.png";
                             }}
                           />
                           <p>{elem.kartName}</p>
