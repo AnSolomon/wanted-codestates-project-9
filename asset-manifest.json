@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wanted-codestates-project-9/static/css/main.bd21053e.css",
+    "main.js": "/wanted-codestates-project-9/static/js/main.4cba4752.js",
+    "index.html": "/wanted-codestates-project-9/index.html",
+    "main.bd21053e.css.map": "/wanted-codestates-project-9/static/css/main.bd21053e.css.map",
+    "main.4cba4752.js.map": "/wanted-codestates-project-9/static/js/main.4cba4752.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd21053e.css",
+    "static/js/main.4cba4752.js"
+  ]
+}
