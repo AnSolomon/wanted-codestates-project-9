@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 
 export const Wrap = styled.div`
@@ -7,6 +7,8 @@ export const Wrap = styled.div`
   height: 1000px;
   min-width: 1000px;
   overflow-y: hidden;
+  overflow-x: hidden;
+
 `;
 
 export const ContentMain = styled.div`
@@ -20,6 +22,31 @@ export const ContentMain = styled.div`
   z-index: 0;
 `;
 
+
+const motionLeftAnimation = keyframes`
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: -25%;
+  }
+  100% {
+    left: 0%;
+  }
+`;
+
+const motionRightAnimation = keyframes`
+  0% {
+    right: -50%;
+  }
+  50% {
+    right: -25%;
+  }
+  100% {
+    right: 0%;
+  }
+`;
+
 export const LeftImg = styled.img.attrs({
   src: "/img/covid_left.png",
 })`
@@ -28,6 +55,20 @@ export const LeftImg = styled.img.attrs({
   top: 200px;
   left: 0;
   margin-left: 3%;
+  animation: ${motionLeftAnimation} 1s;
+
+`;
+
+export const LeftMainImg = styled.img.attrs({
+  src: "/img/main_left_bg.png",
+})`
+  position: absolute;
+  width: 380px;
+  top: 200px;
+  left: 0;
+  margin-left: 3%;
+  animation: ${motionLeftAnimation} 1s;
+
 `;
 
 export const RightImg = styled.img.attrs({
@@ -38,6 +79,20 @@ export const RightImg = styled.img.attrs({
   top: 200px;
   right: 0;
   margin-right: 3%;
+  animation: ${motionRightAnimation} 1s;
+
+`;
+
+export const RightMainImg = styled.img.attrs({
+  src: "/img/main_right_bg.png",
+})`
+  position: absolute;
+  width: 380px;
+  top: 200px;
+  right: 0;
+  margin-right: 3%;
+  animation: ${motionRightAnimation} 1s;
+
 `;
 
 export const HomeTitle = styled.div`
@@ -45,14 +100,13 @@ export const HomeTitle = styled.div`
   height: 100%;
 `;
 
+
 export const MainMessage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 200px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
   color: white;
   letter-spacing: -1px;
@@ -68,6 +122,16 @@ export const MainCopy = styled.div`
   margin-top: 7px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 15px;
+`;
+
+const  motionInputAnimation = keyframes`
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
+
 `;
 
 export const SearchForm = styled.div`
@@ -91,6 +155,8 @@ export const SearchForm = styled.div`
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+
+  animation: ${motionInputAnimation} 1s;
 `;
 
 export const SelectDiv = styled.div`

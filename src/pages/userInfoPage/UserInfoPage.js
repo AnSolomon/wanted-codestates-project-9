@@ -124,7 +124,7 @@ const UserInfoPage = () => {
         }
 
         getSpeedRankData.unshift(
-          Number(elem.player.matchRank === "99" ? "8" : elem.player.matchRank)
+          Number((elem.player.matchRank === "99") || (elem.player.matchRank === "") ? "8" : elem.player.matchRank)
         );
 
         const getTrackName = trackData.filter(
@@ -137,7 +137,7 @@ const UserInfoPage = () => {
         let tempObj = {
           startTime: elem.startTime.replace("T", " "),
           matchRank:
-            elem.player.matchRank === "99" ? "Retired" : elem.player.matchRank,
+            (elem.player.matchRank === "99") || (elem.player.matchRank === "") ? "Retired" : elem.player.matchRank,
           playerCount: elem.playerCount,
           trackId: elem.trackId,
           trackName: getTrackName[0]?.name,
@@ -164,7 +164,7 @@ const UserInfoPage = () => {
         }
 
         getItemRankData.unshift(
-          Number(elem.player.matchRank === "99" ? "8" : elem.player.matchRank)
+          Number((elem.player.matchRank === "99") || (elem.player.matchRank === "") ? "8" : elem.player.matchRank)
         );
 
         const getTrackName = trackData.filter(
@@ -177,7 +177,7 @@ const UserInfoPage = () => {
         let tempObj = {
           startTime: elem.startTime.replace("T", " "),
           matchRank:
-            elem.player.matchRank === "99" ? "Retired" : elem.player.matchRank,
+          (elem.player.matchRank === "99") || (elem.player.matchRank === "") ? "Retired" : elem.player.matchRank,
           playerCount: elem.playerCount,
           trackId: elem.trackId,
           trackName: getTrackName[0]?.name,
@@ -221,7 +221,7 @@ const UserInfoPage = () => {
     };
   }, [getUserInfo, matchType]);
 
-  const handleChangeMatchTypeClick = (type) => {
+  const handleChangeMatchTypeUserInfoClick = (type) => {
     if (matchType !== type) {
       changeMatchType(`/user?nick=${searchNickname}&matchType=${type}`);
     }
@@ -261,13 +261,13 @@ const UserInfoPage = () => {
                 <SelectMatch>
                   <IndividualMatch
                     state={matchType}
-                    onClick={() => handleChangeMatchTypeClick("indi")}
+                    onClick={() => handleChangeMatchTypeUserInfoClick("indi")}
                   >
                     개인전
                   </IndividualMatch>
                   <TeamMatch
                     state={matchType}
-                    onClick={() => handleChangeMatchTypeClick("team")}
+                    onClick={() => handleChangeMatchTypeUserInfoClick("team")}
                   >
                     팀전
                   </TeamMatch>

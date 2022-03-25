@@ -6,6 +6,7 @@ export const Wrap = styled.div`
   min-width: 1000px;
   min-height: 1000px;
   overflow-y: hidden;
+  overflow-x: hidden;
 `;
 
 export const HeaderBackground = styled.div`
@@ -40,7 +41,6 @@ export const DataInfoDiv = styled.div`
   padding-top: 20px;
   padding-left: 20px;
   width: 100%;
-  font-family: Noto Sans KR;
   font-size: 12px;
   color: gray;
   letter-spacing: -1px;
@@ -181,7 +181,6 @@ export const ReuqestMatchDiv = styled.div`
   font-size: 15px;
   font-weight: 500;
   padding: 0;
-  font-family: Noto Sans KR;
   font-weight: bold;
 `;
 
@@ -238,7 +237,6 @@ export const RecordTitle = styled.p`
   height: 35px;
   width: 95%;
   border-bottom: 1px solid #ccc;
-  font-family: Noto Sans KR;
   font-weight: bold;
   letter-spacing: -1px;
 `;
@@ -252,8 +250,18 @@ export const RecordSection = styled.section`
   margin-bottom: 5px;
   border-width: 1px 1px 1px 4px;
   border-style: solid;
-  border-color: ${({state}) => state === "Retired" ? "whitesmoke whitesmoke whitesmoke red" : state === "1" ? "whitesmoke whitesmoke whitesmoke #07f" : "whitesmoke whitesmoke whitesmoke gray"};
-  background-color: ${({state}) => state === "Retired" ? "rgba(246,36,89,.05)" : state === "1" ? "rgba(0,119,255,.05)" : "white"};
+  border-color: ${({ state }) =>
+    state === "Retired"
+      ? "whitesmoke whitesmoke whitesmoke red"
+      : state === "1"
+      ? "whitesmoke whitesmoke whitesmoke #07f"
+      : "whitesmoke whitesmoke whitesmoke gray"};
+  background-color: ${({ state }) =>
+    state === "Retired"
+      ? "rgba(246,36,89,.05)"
+      : state === "1"
+      ? "rgba(0,119,255,.05)"
+      : "white"};
   box-sizing: border-box;
 `;
 
@@ -265,23 +273,20 @@ export const StartTime = styled.div`
 
 export const Rank = styled.div`
   font-style: italic;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   flex: 1;
-  color: ${({state}) => state === "Retired" ? "red" : state === "1" ? "#07f" : "gray"}
-
+  color: ${({ state }) =>
+    state === "Retired" ? "red" : state === "1" ? "#07f" : "gray"};
 `;
 
 export const RankSpan = styled.span`
-  font-size: 36px;
-
+  font-size: 24px;
+  
 `;
 
 export const CountSpan = styled.span`
-  font-size: 24px;
+  font-size: 20px;
   font-style: italic;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 `;
-
 
 export const Track = styled.div`
   display: flex;
@@ -289,10 +294,7 @@ export const Track = styled.div`
   justify-content: center;
   align-items: center;
   flex: 2;
-  font-family: Noto Sans KR;
   letter-spacing: -1px;
-
-
 `;
 
 export const Kart = styled.div`
@@ -301,14 +303,12 @@ export const Kart = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
-  font-family: Noto Sans KR;
   letter-spacing: -1px;
 `;
 
 export const MatchTime = styled.div`
   margin-right: 10px;
   flex: 1;
-
 `;
 
 export const NoHistoryDiv = styled.div`
@@ -321,7 +321,6 @@ export const NoHistoryDiv = styled.div`
   border: 2px solid whitesmoke;
   background-color: #ebebeb;
 
-  font-family: Noto Sans KR;
   letter-spacing: -1px;
 
   box-sizing: border-box;
@@ -358,7 +357,6 @@ export const Spinner = styled.div`
 
 export const LoadingText = styled.p`
   height: 40px;
-  font-family: Noto Sans KR;
   font-size: 12px;
   color: gray;
   letter-spacing: -1px;

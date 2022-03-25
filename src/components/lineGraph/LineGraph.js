@@ -20,7 +20,7 @@ const LineGraph = ({ speedRankList, itemRankList }) => {
     if (ctx) {
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       const tickY = 20;
-    //   const tickX = 0.64;
+      //   const tickX = 0.64;
       const tickX = 15.7;
       let sum = 0;
       let x = 12;
@@ -63,17 +63,24 @@ const LineGraph = ({ speedRankList, itemRankList }) => {
         y = 5 + elem * tickY;
       });
 
-      setAverRank(sum / speedRankList.length);
+      if (speedRankList.length) {
+        setAverRank((sum / speedRankList.length).toFixed(2));
+      } else {
+        setAverRank(0);
+      }
     }
-
-    
   }, [ctx, speedRankList, itemRankList]);
+  console.log(averRank);
 
   return (
     <>
       <GraphTitleDiv>
         <span style={{ marginLeft: "20px" }}>순위 변동 추이</span>
-        <GraphTitleSpan>최근 50경기 평균 순위 {averRank}위</GraphTitleSpan>
+        {averRank !== 0 ? (
+          <GraphTitleSpan>최근 50경기 평균 순위 {averRank}위</GraphTitleSpan>
+        ) : (
+          <GraphTitleSpan>최근 경기가 없습니다.</GraphTitleSpan>
+        )}
       </GraphTitleDiv>
       <GraphChartDiv>
         <GraphCanvas ref={canvasRef} width={800} height={170} />

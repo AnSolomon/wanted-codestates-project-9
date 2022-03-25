@@ -7,7 +7,6 @@ export const GraphTitleDiv = styled.div`
   width: 100%;
   height: 50px;
   font-size: 15px;
-  font-family: Noto Sans KR;
   font-weight: bold;
   letter-spacing: -1px;
   color: black;

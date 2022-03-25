@@ -9,6 +9,7 @@ export const HeaderWrap = styled.div`
   min-width: 1000px;
   height: 100px;
   z-index: 1;
+  overflow-x: hidden;
 `;
 
 export const InnerLink = styled.div`
@@ -56,9 +57,6 @@ export const NavContent = styled.div`
   width: 80px;
   height: 55px;
   opacity: ${({ state }) => (state ? "1" : "0.5")};
-
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
   letter-spacing: -1px;
 

@@ -13,9 +13,9 @@ import {
 const Header = ({ receiveLink }) => {
   const navList = [
     { name: "홈", link: "/" },
-    { name: "랭킹", link: "/rank" },
-    { name: "카트", link: "/body" },
-    { name: "트랙", link: "/track" },
+    { name: "랭킹", link: "/rank?mode=indi" },
+    // { name: "카트", link: "/body" },
+    // { name: "트랙", link: "/track" },
   ];
 
   return (

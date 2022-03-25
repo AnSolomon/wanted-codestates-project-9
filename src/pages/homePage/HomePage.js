@@ -5,7 +5,9 @@ import {
   Wrap,
   ContentMain,
   LeftImg,
+  LeftMainImg,
   RightImg,
+  RightMainImg,
   HomeTitle,
   MainMessage,
   MainContent,
@@ -84,6 +86,7 @@ const HomePage = () => {
       <Header receiveLink={"/"} />
       <ContentMain>
         <LeftImg />
+        <LeftMainImg/>
         <HomeTitle>
           <MainMessage>
             <MainContent>
@@ -150,6 +153,8 @@ const HomePage = () => {
           </SearchForm>
         </HomeTitle>
         <RightImg />
+        <RightMainImg/>
+
       </ContentMain>
     </Wrap>
   );
