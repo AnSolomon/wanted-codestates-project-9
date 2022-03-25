@@ -44,6 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://api.nexon.co.kr",
-  "homepage": "https://ansolomon.github.io/wanted-codestates-project-9/"
+  "proxy": "https://api.nexon.co.kr"
 }

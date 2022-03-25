@@ -51,9 +51,9 @@ import { rankData } from "../../data/sampleData";
 
 const RankPage = () => {
   const MEDAL_IMAGE_URL = [
-    "https://ansolomon.github.io/wanted-codestates-project-9/img/icon_goldmedal.png",
-    "https://ansolomon.github.io/wanted-codestates-project-9/img/icon_silvermedal.png",
-    "https://ansolomon.github.io/wanted-codestates-project-9/img/icon_bronzemedal.png",
+    "/img/icon_goldmedal.png",
+    "/img/icon_silvermedal.png",
+    "/img/icon_bronzemedal.png",
   ];
 
   const date = new Date();

@@ -59,7 +59,7 @@ const BackWaveAnimation = keyframes`
 
 export const WaveDiv = styled.div`
   position: absolute;
-  background-image: url("https://ansolomon.github.io/wanted-codestates-project-9/img/background_wave.svg");
+  background-image: url("/img/background_wave.svg");
   top: 72%;
   width: 6400px;
   height: 198px;
@@ -68,7 +68,7 @@ export const WaveDiv = styled.div`
 
 export const BackWaveDiv = styled.div`
   position: absolute;
-  background-image: url("https://ansolomon.github.io/wanted-codestates-project-9/img/background_wave.svg");
+  background-image: url("/img/background_wave.svg");
   top: 72%;
   left: -50%;
   width: 6400px;
