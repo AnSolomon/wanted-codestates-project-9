@@ -1,13 +1,13 @@
-### 배포 링크
+## 배포 링크
 
 
-### 프로젝트 실행 방법
+## 프로젝트 실행 방법
 1. npm install
 2. npm start
 
-### 구현한 기능 목록
+## 구현한 기능 목록
 
- - 검색 메인 페이지
+ ### 검색 메인 페이지
 
 ![image](https://user-images.githubusercontent.com/87939970/160152047-fb3df973-d00f-4752-8eba-50e301824a5c.png)
 
@@ -15,9 +15,14 @@
 
 유저 닉네임을 검색 후 엔터키나 마우스로 TMI 버튼을 클릭하면 조회할 수 있으며, 랭킹 버튼을 누르면 랭킹 페이지를 볼 수 있다.
 
-- 개인 전적 조회 페이지
 
-![image](https://user-images.githubusercontent.com/87939970/160152360-5864c530-d0f8-4352-97b6-4532ba295cef.png)
+
+
+
+### 개인 전적 조회 페이지
+
+![image](https://user-images.githubusercontent.com/87939970/160160422-4c8cfdf2-9261-412c-9b5b-dd32fa97db00.png)
+
 
 ![image](https://user-images.githubusercontent.com/87939970/160152409-75dd5059-a40f-4ebf-bd54-0ab94e861bcb.png)
 
@@ -31,7 +36,7 @@ API 요청으로 받아온 데이터를 이용하여 유저 캐릭터와 닉네�
 그 아래는 유저가 최근에 play한 내용을 시작 시간, 순위, 트랙, 카트, 완주 시간 순으로 나타내었다.
 
 
-- 랭킹 페이지
+### 랭킹 페이지
   
 ![image](https://user-images.githubusercontent.com/87939970/160152457-fbd0392a-ef08-46ef-a963-731fa00c655a.png)
 
@@ -40,10 +45,10 @@ API 요청으로 받아온 데이터를 이용하여 유저 캐릭터와 닉네�
 
 
 
-### 그래프 및 애니메이션 적용 지점
+## 그래프 및 애니메이션 적용 지점
 
 - 그래프
-- 
+
 개인 전적 조회 페이지에 꺾은 그래프와 아래 원형 그래프
 
 - 애니메이션
