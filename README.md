@@ -11,6 +11,12 @@ https://curious-basbousa-0645b4.netlify.app/
   
   <br>
   
+## 기술 스택
+1. JavaScript
+2. React
+3. Redux-Toolkit
+  
+  <br>
 
 ## 구현한 기능 목록
 
